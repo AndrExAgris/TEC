@@ -1,0 +1,41 @@
+; o estado inicial é a0
+; machine variant = standard
+
+a0 * * l a0
+a0 _ p r a
+
+a 0 x r b
+a 1 y r c
+a x * r a
+a y * r a
+a _ * l halt-accept
+
+b 0 * r b
+b y * r b
+b x * r b
+b 1 x l d 
+
+c 1 * r c
+c x * r c
+c y * r c
+c 0 y l d
+c _ * l e
+
+d p * r a
+d 0 * l d
+d 1 * l d
+d x * l d
+d y * l d
+
+e 1 * l f
+
+f y * l f
+f x * l f
+f 1 * l g
+f p * r halt
+
+
+g y * l g
+g x * l g
+g 1 * l halt
+g p * r halt-accept

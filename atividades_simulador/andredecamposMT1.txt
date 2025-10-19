@@ -1,0 +1,16 @@
+; pra facilitar a vida a entrada é um binario sempre com zero a esqueda
+; o estado inicial é a
+; machine variant = sipser
+
+
+a 0 0 r a 
+a 1 1 r a
+a _ _ l b
+
+b 0 0 r c
+b 1 0 l d
+
+c _ 0 r halt-accept
+
+d 1 0 l d
+d 0 1 l halt-accept

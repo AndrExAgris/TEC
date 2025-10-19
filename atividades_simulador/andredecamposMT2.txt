@@ -1,0 +1,24 @@
+; se tem mais 0s no final que 0s e 1s no começo ele entra em loop não aceitando
+; o estado inicial é a
+; machine variant = sipiser
+
+
+a 0 x r a
+a 1 1 * b
+
+b 1 x r b
+b 0 0 * c
+
+c 0 y r c
+c _ * l d
+
+d y z l e
+d w * r halt-accept
+
+e y * l e
+e w * l e
+e x w r f
+
+f y * r f
+f w * r f
+f z * l d
