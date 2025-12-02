@@ -1,9 +1,28 @@
-;S
-0 0 0 r 0
-0 1 1 r 0
-0 _ _ l 1
-1 0 0 r 2
-1 1 0 l 3
-2 _ 0 r halt-accept
-3 1 0 l 3
-3 0 1 l halt-accept
+;I
+0 0 _ l W0_1
+0 1 _ l W1_1
+0 _ _ r Z1
+Z1 _ _ r Z2
+Z1 0 0 * 0
+Z1 1 1 * 0
+Z2 _ _ r Z3
+Z2 0 0 * 0
+Z2 1 1 * 0
+Z3 _ _ r Z4
+Z3 0 0 * 0
+Z3 1 1 * 0
+Z4 _ _ * halt-accept
+Z4 0 0 * 0
+Z4 1 1 * 0
+W0_1 * * l W0_2
+W1_1 * * l W1_2
+W0_2 * * l W0_3
+W1_2 * * l W1_3
+W0_3 * 0 r SEEK
+W1_3 * 1 r SEEK
+SEEK 0 0 * 0
+SEEK 1 1 * 0
+SEEK _ _ r SEEK2
+SEEK2 0 0 * 0
+SEEK2 1 1 * 0
+SEEK2 _ _ r Z1

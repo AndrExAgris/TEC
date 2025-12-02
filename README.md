@@ -23,9 +23,3 @@ O código da Máquina de Turing a ser convertida deve ser colado no arquivo `mt.
     python3 main.py
     ```
 3.  A máquina convertida será gerada no arquivo `mt.out`.
-
----
-
-## Aviso
-
-A conversão de Máquina de Turing Duplamente Infinita para Semi-Infinita não foi implementada. Atualmente, o programa só aceita máquinas do tipo **Semi-Infinita** como entrada (indicadas por `;S` no arquivo `mt.in`).
